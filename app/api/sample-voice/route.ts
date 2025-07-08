@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
     // ใส่ API key ของ botnoi (ถ้า points หมด api จะใช้ไม่ได้)
     const API_KEY = "VTgzYTYwOTE1ZmNiOTQ4ZTZhYWJiOTA4ODcyOWUxMzFkNTYxODk0"
 
+    // เรียก Botnoi API เพื่อขอสร้างเสียง
     const response = await fetch("https://api-voice.botnoi.ai/openapi/v1/generate_audio", {
       method: "POST",
       headers: {
@@ -22,18 +23,20 @@ export async function POST(request: NextRequest) {
         speaker,
         volume,
         speed,
-        type_media: "m4a",
-        save_file: "true",
+        type_media: "m4a", // ประเภทไฟล์เสียง (m4a)
+        save_file: "true", //ให้ API เก็บไฟล์เสียงแล้วส่ง URL กลับมา
         language,
       }),
     })
 
+    // ถ้า API ส่งกลับสถานะไม่สำเร็จ (ไม่ใช่ 200 OK)
     if (!response.ok) {
       const errorText = await response.text()
       console.error(`Botnoi API error: ${response.status} - ${errorText}`)
       throw new Error(`Botnoi API error: ${response.status}`)
     }
 
+    //แปลงผลลัพธ์เป็น JSON และพยายามดึง audioUrl ที่เก็บเสียงที่ได้
     const data = await response.json()
 
     // รองรับหลายๆ รูปแบบ URL จาก API

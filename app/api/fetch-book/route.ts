@@ -1,9 +1,12 @@
+// ดึง NextRequest และ NextResponse จาก Next.js เพื่อจัดการ Request/Response
 import { type NextRequest, NextResponse } from "next/server"
 
+// API Handler สำหรับ POST Request
 export async function POST(request: NextRequest) {
   try {
     const { url } = await request.json()
-
+    
+    // ตรวจสอบว่า text ต้องมีและต้องเป็น string ไม่อย่างนั้นจะตอบกลับด้วย HTTP 400 
     if (!url || typeof url !== "string") {
       return NextResponse.json({ error: "URL is required and must be a string" }, { status: 400 })
     }

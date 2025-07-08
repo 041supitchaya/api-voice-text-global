@@ -1,7 +1,9 @@
+//  สร้างเสียงจากข้อความ 
 import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
   try {
+    //  เป็นคำสั่งที่ใช้ใน Next.js เพื่อแปลง body ของ HTTP request ให้กลายเป็น JavaScript object
     const { text, speaker = "1", speed = 1.0, volume = 1.0, language = "th" } = await request.json()
 
     if (!text || typeof text !== "string") {
@@ -17,14 +19,16 @@ export async function POST(request: NextRequest) {
         "Botnoi-Token": API_KEY,
         "Content-Type": "application/json",
       },
+
+      // เรียก API generate_audio ของ Botnoi
       body: JSON.stringify({
-        text,
-        speaker,
+        text, //ข้อความที่ต้องการพูด
+        speaker, //รหัสเสียง
         volume,
-        speed,
+        speed, //การตั้งค่าระดับเสียงและความเร็ว
         type_media: "m4a",
         save_file: "true",
-        language,
+        language, //ภาษาของเสียงพูด 
       }),
     })
 

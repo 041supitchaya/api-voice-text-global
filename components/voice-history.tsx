@@ -47,7 +47,7 @@ const languageNames = {
   en: "English",
   zh: "中文",
   ja: "日本語",
-  ko: "한국어",
+  // ko: "한국어",
 }
 
 export default function VoiceHistory({ history, onDeleteItem, onClearAll, onReplay }: VoiceHistoryProps) {
