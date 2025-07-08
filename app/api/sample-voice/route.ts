@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     }
 
     // ใส่ API key 
-    const API_KEY = "9XuZs0HMf12K4kxVJg30Bqe2WxlzaGDr"
+    const API_KEY = "lopjaKNUXIyLXrxgT7b8lKiWOH0PgGGS"
 
     const response = await fetch("https://api-voice.botnoi.ai/openapi/v1/generate_audio", {
       method: "POST",
