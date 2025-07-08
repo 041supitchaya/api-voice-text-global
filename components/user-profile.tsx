@@ -36,12 +36,21 @@ interface UserProfileProps {
 }
 
 const voiceOptions = [
-  { value: "1", label: "เสียงผู้หญิง 1 (นุ่มนวล)" },
-  { value: "2", label: "เสียงผู้หญิง 2 (สดใส)" },
-  { value: "3", label: "เสียงผู้ชาย 1 (เข้มแข็ง)" },
-  { value: "4", label: "เสียงผู้ชาย 2 (อ่อนโยน)" },
-  { value: "5", label: "เสียงเด็ก" },
-  { value: "6", label: "เสียงผู้สูงอายุ" },
+  { value: "1", label: "อวา (วัยรุ่น)" },
+  { value: "2", label: "โบ (วัยเด็ก)"},
+  { value: "3", label: "คุณงาม (วัยผู้ใหญ่)"},
+  { value: "4", label: "แม็กซ์ (ผู้ชาย)"},
+  { value: "5", label: "อลัน (ผู้ชาย)" },
+  { value: "6", label: "ไซเรน (วัยรุ่น)"},
+  { value: "7", label: "อลิสา (วัยรุ่น)"},
+  { value: "8", label: "เลโอ (ผู้ชาย)"},
+  { value: "9", label: "นาเดียร์ (วัยรุ่น)"},
+  { value: "11", label: "วนิลา (วัยรุ่น)"},
+  { value: "13", label: "อนันดา (วัยเด็ก)"},
+  { value: "14", label: "ไอลีน (วัยรุ่น)"},
+  { value: "15", label: "ฮิโระ (วัยรุ่น)" },
+  { value: "16", label: "ครูดีดี๊ (วัยผู้ใหญ่)" },
+  { value: "17", label: "เจ้าเนิร์ด (วัยรุ่น)"},
 ]
 
 const languages = [

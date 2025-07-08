@@ -191,9 +191,10 @@ export default function TextToSpeechApp() {
       setSampleAudio(null)
     }
 
+// ตั้งค่าคำพูดทดลอง
     try {
       const sampleTexts = {
-        th: `สวัสดีครับ ผมเป็น${speakerName} ยินดีที่ได้รู้จักครับ`,
+        th: `สวัสดีฉันคือ${speakerName} ยินดีที่ได้รู้จัก`,
         en: `Hello, I'm ${speakerName}. Nice to meet you.`,
         zh: `你好，我是${speakerName}，很高兴认识你。`,
         ja: `こんにちは、私は${speakerName}です。よろしくお願いします。`,
