@@ -8,8 +8,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Text is required and must be a string" }, { status: 400 })
     }
 
-    // ใส่ API key 
-    const API_KEY = "lopjaKNUXIyLXrxgT7b8lKiWOH0PgGGS"
+    // ใส่ API key ของ botnoi (ถ้า points หมด api จะใช้ไม่ได้)
+    const API_KEY = "VTgzYTYwOTE1ZmNiOTQ4ZTZhYWJiOTA4ODcyOWUxMzFkNTYxODk0"
 
     const response = await fetch("https://api-voice.botnoi.ai/openapi/v1/generate_audio", {
       method: "POST",
