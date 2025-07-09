@@ -181,11 +181,11 @@ function LandingPage({ onEnterApp }: { onEnterApp: () => void }) {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mb-12 text-center">
           <div className="animate-bounce-slow">
-            <div className="text-3xl font-bold text-blue-400">17+</div>
+            <div className="text-3xl font-bold text-blue-400">15+</div>
             <div className="text-gray-300">โทนเสียง</div>
           </div>
           <div className="animate-bounce-slow animation-delay-1000">
-            <div className="text-3xl font-bold text-purple-400">4+</div>
+            <div className="text-3xl font-bold text-purple-400">4</div>
             <div className="text-gray-300">ภาษา</div>
           </div>
           <div className="animate-bounce-slow animation-delay-2000">
@@ -312,7 +312,7 @@ export default function TextToSpeechApp() {
     }
   }
 
-  // Show landing page first
+// Show landing page first
   if (showLanding) {
     return <LandingPage onEnterApp={() => setShowLanding(false)} />
   }
@@ -574,28 +574,39 @@ export default function TextToSpeechApp() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <div className="max-w-6xl mx-auto pt-8">
-        <Card className="shadow-lg">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">
-              <Volume2 className="h-8 w-8 text-blue-600" />
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-indigo-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto pt-8 p-4">
+        <Card className="shadow-2xl backdrop-blur-sm bg-white/90 border-0 hover-lift">
+          <CardHeader className="text-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-t-lg">
+            <CardTitle className="text-3xl font-bold flex items-center justify-center gap-3">
+              <div className="p-2 bg-white/20 rounded-full backdrop-blur-sm">
+                <Volume2 className="h-8 w-8" />
+              </div>
               แอปอ่านข้อความและหนังสือ
             </CardTitle>
-            <CardDescription className="text-lg text-gray-600">
-              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice 
+            <CardDescription className="text-blue-100 text-lg mt-2">
+              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice API รองรับภาษาผสมในประโยคเดียวกัน
             </CardDescription>
           </CardHeader>
           <CardContent>
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
-                <AlertCircle className="h-4 w-4" />
-                <span className="text-sm">{error}</span>
+              <div className="mb-4 p-4 bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 rounded-xl flex items-center gap-3 text-red-700 shadow-md animate-fade-in">
+                <div className="p-1 bg-red-100 rounded-full">
+                  <AlertCircle className="h-4 w-4" />
+                </div>
+                <span className="text-sm flex-1">{error}</span>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setError(null)}
-                  className="ml-auto h-6 w-6 p-0 text-red-700 hover:bg-red-100"
+                  className="h-8 w-8 p-0 text-red-700 hover:bg-red-100 rounded-full"
                 >
                   ×
                 </Button>
@@ -603,29 +614,45 @@ export default function TextToSpeechApp() {
             )}
 
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-5">
-                <TabsTrigger value="text" className="flex items-center gap-2">
+              <TabsList className="grid w-full grid-cols-5 bg-gradient-to-r from-blue-100 to-purple-100 p-1 rounded-xl shadow-inner">
+                <TabsTrigger
+                  value="text"
+                  className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300 hover:scale-105"
+                >
                   <MessageSquare className="h-4 w-4" />
                   อ่านข้อความ
                 </TabsTrigger>
-                <TabsTrigger value="book" className="flex items-center gap-2">
+                <TabsTrigger
+                  value="book"
+                  className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300 hover:scale-105"
+                >
                   <BookOpen className="h-4 w-4" />
                   อ่านหนังสือ
                 </TabsTrigger>
-                <TabsTrigger value="profile" className="flex items-center gap-2">
+                <TabsTrigger
+                  value="profile"
+                  className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300 hover:scale-105"
+                >
                   <User className="h-4 w-4" />
                   โปรไฟล์
                 </TabsTrigger>
-                <TabsTrigger value="history" className="flex items-center gap-2">
+                <TabsTrigger
+                  value="history"
+                  className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300 hover:scale-105"
+                >
                   <History className="h-4 w-4" />
                   ประวัติ
                 </TabsTrigger>
-                <TabsTrigger value="manage" className="flex items-center gap-2">
+                <TabsTrigger
+                  value="manage"
+                  className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300 hover:scale-105"
+                >
                   <FileText className="h-4 w-4" />
                   จัดการหนังสือ
                 </TabsTrigger>
               </TabsList>
 
+              {/* Keep all TabsContent sections exactly the same, just update the main speak button */}
               <TabsContent value="text" className="space-y-6 mt-6">
                 <div className="mb-4">
                   <label className="text-sm font-medium text-gray-700 mb-2 block">เลือกภาษาหลักสำหรับอ่านออกเสียง:</label>
@@ -689,38 +716,18 @@ export default function TextToSpeechApp() {
                             <span>🇯🇵</span>
                             <span>日本語 - こんにちは</span>
                           </div>
-                          {/* <div className="flex items-center gap-2">
-                            <span>🇰🇷</span>
-                            <span>한국어 - 안녕하세요</span>
-                          </div> */}
                         </div>
                       </div>
-                      {/* <div className="space-y-2">
-                        <h4 className="font-medium text-green-800">✨ ตัวอย่างภาษาผสม:</h4>
-                        <div className="space-y-1 text-gray-600">
-                          <p>"สวัสดี Hello 你好"</p>
-                          <p>"I love กิน sushi 寿司"</p>
-                          <p>"Today วันนี้ is beautiful"</p>
-                          <p>"Thank you ขอบคุณ 谢谢"</p>
-                        </div>
-                      </div> */}
                     </div>
-                    <div className="mt-4 p-3 bg-green-100 rounded-lg">
-                      {/* <p className="text-sm text-green-800">
-                        <strong>💡 เคล็ดลับ:</strong> เลือกภาษาหลักที่ใช้มากที่สุดในข้อความ ระบบจะปรับการออกเสียงให้เหมาะสมโดยอัตโนมัติ
-                      </p> */}
-                    </div>
+                    <div className="mt-4 p-3 bg-green-100 rounded-lg"></div>
                   </CardContent>
                 </Card>
 
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    {/* <label htmlFor="text-input" className="text-sm font-medium text-gray-700">
-                      ใส่ข้อความที่ต้องการให้อ่าน (รองรับหลายภาษา):
-                    </label> */}
                     <Textarea
                       id="text-input"
-                      // placeholder="พิมพ์ข้อความที่นี่... สามารถใส่หลายภาษาผสมกันได้ เช่น สวัสดี Hello 你好 こんにちは 안녕하세요"
+                      placeholder="พิมพ์ข้อความที่นี่... สามารถใส่หลายภาษาผสมกันได้"
                       value={text}
                       onChange={(e) => setText(e.target.value)}
                       className="min-h-[120px] resize-none"
@@ -732,7 +739,7 @@ export default function TextToSpeechApp() {
                   <Button
                     onClick={() => handleSpeak(text, "text")}
                     disabled={isLoading || !text.trim()}
-                    className="w-full h-12 text-lg font-semibold"
+                    className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     size="lg"
                   >
                     {isLoading ? (
@@ -750,14 +757,14 @@ export default function TextToSpeechApp() {
                 </div>
 
                 {audioUrl && (
-                  <div className="space-y-3 mt-6 p-4 bg-gray-50 rounded-lg">
+                  <div className="space-y-3 mt-6 p-4 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-blue-100 shadow-md">
                     <div className="flex items-center justify-between">
                       <h3 className="text-sm font-medium text-gray-700">เสียงที่สร้างแล้ว:</h3>
                       <Button
                         onClick={togglePlayPause}
                         variant="outline"
                         size="sm"
-                        className="flex items-center gap-2 bg-transparent"
+                        className="flex items-center gap-2 bg-transparent hover:bg-blue-50"
                       >
                         {isPlaying ? (
                           <>
@@ -780,6 +787,7 @@ export default function TextToSpeechApp() {
                 )}
               </TabsContent>
 
+              {/* Keep all other TabsContent sections the same, just update the book reading button */}
               <TabsContent value="book" className="space-y-6 mt-6">
                 <VoiceSettings
                   speed={speed}
@@ -908,7 +916,7 @@ export default function TextToSpeechApp() {
                   <Button
                     onClick={handleLoadBook}
                     disabled={isLoadingBook || !selectedBook}
-                    className="w-full bg-transparent"
+                    className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     variant="outline"
                   >
                     {isLoadingBook ? (
@@ -940,12 +948,11 @@ export default function TextToSpeechApp() {
                       <Button
                         onClick={() => {
                           const book = availableBooks.find((b) => b.id === selectedBook)
-                          // ใช้ภาษาของหนังสือที่เลือก
                           const bookLanguage = book?.language || language
                           handleSpeak(bookContent, "book", book?.title, bookLanguage)
                         }}
                         disabled={isLoading || !bookContent.trim()}
-                        className="w-full h-12 text-lg font-semibold"
+                        className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                         size="lg"
                       >
                         {isLoading ? (
@@ -965,14 +972,14 @@ export default function TextToSpeechApp() {
                 </div>
 
                 {audioUrl && (
-                  <div className="space-y-3 mt-6 p-4 bg-gray-50 rounded-lg">
+                  <div className="space-y-3 mt-6 p-4 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-blue-100 shadow-md">
                     <div className="flex items-center justify-between">
                       <h3 className="text-sm font-medium text-gray-700">เสียงที่สร้างแล้ว:</h3>
                       <Button
                         onClick={togglePlayPause}
                         variant="outline"
                         size="sm"
-                        className="flex items-center gap-2 bg-transparent"
+                        className="flex items-center gap-2 bg-transparent hover:bg-blue-50"
                       >
                         {isPlaying ? (
                           <>
@@ -995,6 +1002,7 @@ export default function TextToSpeechApp() {
                 )}
               </TabsContent>
 
+              {/* Keep profile, history, and manage tabs exactly the same */}
               <TabsContent value="profile" className="mt-6">
                 <UserProfile
                   userProfile={userProfile}
@@ -1034,14 +1042,22 @@ export default function TextToSpeechApp() {
           </CardContent>
         </Card>
 
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>ขับเคลื่อนโดย Botnoi Voice API</p>
-          <p className="mt-1">รองรับการอ่านหลายภาษาและภาษาผสมในประโยคเดียวกัน</p>
+        <div className="mt-8 text-center relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/50 to-transparent h-px top-1/2"></div>
+          <div className="relative bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 px-6 py-4 rounded-2xl shadow-lg backdrop-blur-sm border border-white/50">
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-600 mb-2">
+              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+              <p className="font-medium">ขับเคลื่อนโดย Botnoi Voice API</p>
+              <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse animation-delay-1000"></div>
+            </div>
+            <p className="text-xs text-gray-500">รองรับการอ่านหลายภาษาและภาษาผสมในประโยคเดียวกัน</p>
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
 
 
 
