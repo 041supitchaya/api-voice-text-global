@@ -61,6 +61,15 @@ interface UserProfileData {
 const defaultBooks: BookType[] = [
   {
     id: "default_1",
+    title: "นิทานอีสป_ดาวลูกไก่",
+    url: "https://www.kalyanamitra.org/th/Aesop_detail.php?page=4010",
+    description: "เรื่องราวของดาวลูกไก่",
+    type: "url",
+    category: "นิทาน",
+    language: "th",
+  },
+  {
+    id: "default_2",
     title: "นิทานพื้นบ้านไทย - นางสีดา",
     url: "https://th.wikipedia.org/wiki/นางสีดา",
     description: "เรื่องราวของนางสีดาในรามเกียรติ์",
