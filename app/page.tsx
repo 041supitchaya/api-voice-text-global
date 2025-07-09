@@ -67,10 +67,13 @@ interface UserProfileData {
 const defaultBooks: BookType[] = [
   {
     id: "default_1",
-    title: "นิทานอีสป_ดาวลูกไก่",
-    url: "https://www.kalyanamitra.org/th/Aesop_detail.php?page=4010",
-    description: "เรื่องราวของดาวลูกไก่",
-    type: "url",
+    title: "นิทานอีสป: ดาวลูกไก่",
+    description: "เรื่องราวของแม่ไก่และลูกไก่ 7 ตัว ที่กลายเป็นดาวบนฟ้า",
+    content:`ณ บ้านเชิงเขา มีสองตายายอาศัยอยู่กับแม่ไก่ 1 ตัว และลูกไก่อีก 7 ตัว ตายายเลี้ยงดูพวกมันเป็นอย่างดี วันหนึ่งมีพระธุดงค์มาปักกลด ตากับยายจึงพากันไปกราบไหว้ และกลับมาคุยกันว่าพรุ่งนี้จะทำอาหารอะไรไปถวายพระกันดี
+"พืชผักที่ปลูกไว้ก็ขายหมดแล้ว" ตาจึงบอกว่า "สงสัยเราคงจะต้องฆ่าแม่ไก่ไปทำแกงแล้วล่ะ" แม่ไก่ได้ยินเช่นนั้นก็ตกใจ จึงรีบกลับไปบอกลาลูก ๆ ทั้ง 7 ตัวเป็นครั้งสุดท้าย ก่อนที่ทั้งหมดจะโผเข้ากอดกันร่ำไห้
+เช้าวันรุ่งขึ้น ตากับยายก็ฆ่าแม่ไก่ไปทำแกงถวาย ลูกไก่ทั้ง 7 ตัวจึงปรึกษากันว่า เมื่อไม่มีแม่แล้วพวกตนจะอยู่กันอย่างไร ขอตายตามแม่ไก่ไปจะดีกว่า
+จากนั้นลูกไก่ทั้ง 7 ตัวก็พร้อมใจกันกระโดดเข้ากองไฟตายตามแม่ไปทันที ด้วยอานิสงส์ผลบุญของแม่ไก่และความกตัญญูของลูกทั้ง 7 ตัว ส่งผลให้บรรดาลูกไก่ไปเกิดเป็นกลุ่มดาว 7 ดวง ที่เราเรียกว่า "ดาวลูกไก่" นั่นเอง`,
+    type: "text",
     category: "นิทาน",
     language: "th",
   },
@@ -82,6 +85,35 @@ const defaultBooks: BookType[] = [
     type: "url",
     category: "นิทาน",
     language: "th",
+  },
+  {
+    id: "default_3",
+    title: "さるかに – The Monkey and The Crab",
+    description: "Part 1 : One Happy Crab",
+    content:` むかし、 ある やま の ふもと に、 いっぴき の かに が いました。ぽかぽか と あたたかい はる の ひ の こと です。
+    かに は ちかく の かわ の ほとり を、 のんびり さんぽして いました。すると、 だれ が おとして いった の か、くさむら に おおきな にぎりめし が ごろん と ひとつ、 おちて いました。
+    これ は、 いい もの を みつけた よ。`,
+    type: "text",
+    category: "นิทาน",
+    language: "ja",
+  },
+  {
+    id: "default_4",
+    title: "一天的生活 (A day in the life)",
+    description: "A day in the life",
+    content:` 我每天早上七点起床，刷牙洗脸后吃早饭。我喜欢吃面包和喝咖啡，然后走路去工作。工作的路上，我听音乐，看路上的人和车。我在公司吃午饭，通常是饭和菜。工作结束后，我回家做晚饭，然后看电视放松。每天十一点我会准时上床睡觉。这就是我普通生活的一天。`,
+    type: "text",
+    category: "บทความ",
+    language: "zh",
+  },
+  {
+    id: "default_5",
+    title: "Red Ball on the Floor",
+    description: "Red Ball on the Floor",
+    content:`The ball is on the floor. It is a red ball. It is a rubber ball. The baby looks at the ball. The cat looks at the ball. The cat is black. The cat walks over to the ball. The cat hits the ball with its paw. The ball rolls on the floor. The baby smiles.`,
+    type: "text",
+    category: "เรื่องสั้น",
+    language: "en",
   },
 ]
 
