@@ -155,7 +155,7 @@ function LandingPage({ onEnterApp }: { onEnterApp: () => void }) {
             Botnoi Voice
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-2">แอปอ่านข้อความและหนังสือ</p>
-          <p className="text-lg text-gray-400">ขับเคลื่อนด้วย AI เทคโนโลジีล่าสุด</p>
+          <p className="text-lg text-gray-400">ขับเคลื่อนด้วย AI เทคโนโลยีล่าสุด</p>
         </div>
 
         {/* Features Showcase */}
