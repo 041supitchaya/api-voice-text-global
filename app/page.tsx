@@ -107,7 +107,7 @@ function LandingPage({ onEnterApp }: { onEnterApp: () => void }) {
     {
       icon: <Globe className="h-8 w-8" />,
       title: "รองรับหลายภาษา",
-      description: "ไทย, English, 中文, 日本語, 한국어",
+      description: "ไทย, อังกฤษ (English), จีน (中文), ญี่ปุ่น (日本語)",
       color: "from-green-500 to-emerald-500",
     },
     {
@@ -583,7 +583,7 @@ export default function TextToSpeechApp() {
               แอปอ่านข้อความและหนังสือ
             </CardTitle>
             <CardDescription className="text-lg text-gray-600">
-              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice API รองรับภาษาผสมในประโยคเดียวกัน
+              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice 
             </CardDescription>
           </CardHeader>
           <CardContent>
