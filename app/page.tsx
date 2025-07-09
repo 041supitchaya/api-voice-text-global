@@ -592,7 +592,7 @@ export default function TextToSpeechApp() {
               แอปอ่านข้อความและหนังสือ
             </CardTitle>
             <CardDescription className="text-blue-100 text-lg mt-2">
-              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice API รองรับภาษาผสมในประโยคเดียวกัน
+              ใส่ข้อความภาษาอะไรก็ได้ เพื่อให้อ่านออกเสียงด้วย Botnoi Voice
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -733,7 +733,7 @@ export default function TextToSpeechApp() {
                       className="min-h-[120px] resize-none"
                       disabled={isLoading}
                     />
-                    <p className="text-xs text-gray-500">รองรับ: ไทย, English, 中文, 日本語</p>
+                    <p className="text-xs text-gray-500">รองรับ: ไทย, อังกฤษ (English), จีน (中文), ญี่ปุ่น (日本語)</p>
                   </div>
 
                   <Button
@@ -1050,7 +1050,7 @@ export default function TextToSpeechApp() {
               <p className="font-medium">ขับเคลื่อนโดย Botnoi Voice API</p>
               <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse animation-delay-1000"></div>
             </div>
-            <p className="text-xs text-gray-500">รองรับการอ่านหลายภาษาและภาษาผสมในประโยคเดียวกัน</p>
+            <p className="text-xs text-gray-500">รองรับการอ่านหลายภาษา</p>
           </div>
         </div>
       </div>
